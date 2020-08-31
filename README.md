@@ -31,5 +31,5 @@ The input sample Files can be found in `root://cms-xrd-global.cern.ch//store/use
 `make_plot.C` script can be used to check Data-MC comparison plots with 2 different b-tagging calibration methods, discriminant reshaping (2b) and fixed WP-based (1a) calibration from `https://twiki.cern.ch/twiki/bin/viewauth/CMS/BTagSFMethods`
 
 ```
-root -l make_plot.C(<variable-string-to-plot>,<calibration-tuning-index>)
+root -l "make_plot.C+(\"<variable-string-to-plot>\",<calibration-tuning-index>)"
 ```
