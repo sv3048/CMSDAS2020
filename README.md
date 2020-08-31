@@ -25,7 +25,7 @@ $source process_all.sh
 ```
 The job logs are stored in `jobs/` directory.
   
-The input sample Files can be found in root://cms-xrd-global.cern.ch//store/user/smitra/CMSDAS2020/
+The input sample Files can be found in `root://cms-xrd-global.cern.ch//store/user/smitra/CMSDAS2020/`
 
 `make_plot.C` script can be used to check Data-MC comparison plots with 2 different b-tagging calibration methods, discriminant reshaping (2b) and fixed WP-based (1a) calibration from https://twiki.cern.ch/twiki/bin/viewauth/CMS/BTagSFMethods     
 
