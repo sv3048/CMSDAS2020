@@ -69,7 +69,7 @@ class BTagWeight
 
 BTagWeight::BTagWeight(){
 
-///========================= Initialize BTagCalibration and BTagCalibrationReader objects ==========
+///========================= Initialize BTagCalibration and BTagCalibrationReader ==========
 //
 //
 //==========================
