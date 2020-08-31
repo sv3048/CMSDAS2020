@@ -1,0 +1,12 @@
+   ------------------------------------------------------------
+  | Welcome to ROOT 6.12/07                http://root.cern.ch |
+  |                               (c) 1995-2017, The ROOT Team |
+  | Built for linuxx8664gcc                                    |
+  | From tag , 9 February 2018                                 |
+  | Try '.help', '.demo', '.license', '.credits', '.quit'/'.q' |
+   ------------------------------------------------------------
+
+
+Processing Selection.C+(1)...
+Sample: ttToDiLep_small	Xsec: 88.29	 # total events: 5.96689e+08	 # entries: 796315
+Starting Event Loop for ttToDiLep_small

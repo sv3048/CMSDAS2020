@@ -36,7 +36,7 @@
 
 
 //================= Include BTagging Weight Calculator class========
-#include "BTagWeight.cc"
+
 //========================================
 
 #ifdef __MAKECINT__

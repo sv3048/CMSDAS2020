@@ -36,9 +36,7 @@
 #include "TStopwatch.h"
 
 //Include BTagCalibrationStandalone class === Incomplete ===
-//========Solution section of code (1 of 3)=========
-#include "BTagCalibrationStandalone.cpp"
-#include "BTagCalibrationStandalone.h"
+
 //========End of solution section of code (1 of 3)=========
 
 
@@ -71,20 +69,10 @@ class BTagWeight
 
 BTagWeight::BTagWeight(){
 
-
-	BTagCalibration calib ("deepjet","DeepJet_102XSF_V2.csv");
-
-
-	reader=new BTagCalibrationReader(BTagEntry::OP_MEDIUM, "central"); 
-	reader->load(calib, BTagEntry::FLAV_B,   "comb"); // b
-	reader->load(calib, BTagEntry::FLAV_C,   "comb"); // c
-	reader->load(calib, BTagEntry::FLAV_UDSG,   "incl"); // light
-
-	readerReShape=new BTagCalibrationReader(BTagEntry::OP_RESHAPING, "central");	
-	readerReShape->load(calib, BTagEntry::FLAV_B,   "iterativefit"); // b
-	readerReShape->load(calib, BTagEntry::FLAV_C,   "iterativefit"); // c
-	readerReShape->load(calib, BTagEntry::FLAV_UDSG,   "iterativefit"); // light
-
+///========================= Initialize BTagCalibration and BTagCalibrationReader objects ==========
+//
+//
+//==========================
 }
 
 BTagWeight::~BTagWeight()
