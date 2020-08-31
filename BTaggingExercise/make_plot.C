@@ -28,7 +28,7 @@
 #include "TGaxis.h"
 #include "TPad.h"
 
-int plot_stack(std::string Var, int tune){
+int make_plot(std::string Var, int tune){
 
 	gStyle->SetOptStat(0);
 
