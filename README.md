@@ -38,4 +38,4 @@ The input sample files can be found in `/afs/cern.ch/work/s/spmondal/public/BTV_
 ```
 root -l "make_plot.C+(\"allJetsDeepFlavB\",1)"
 ```
-One can replace the variable and the index in the above line to get plots for other observables and calibration methods. Compare the DeepJet score for the leading (first) jet using the two calibration methods mentioned above and w/o calibration SFs.
+One can replace the variable and the index in the above line to get plots for other observables and calibration methods. Compare the DeepJet score for the leading (first) jet using the SFs due to the two calibration methods mentioned above and also w/o any calibration SFs.
