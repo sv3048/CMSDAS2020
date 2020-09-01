@@ -1,7 +1,6 @@
 # CMSDAS2020
 Repository for BTaggingExercise for CMSDAS2020
 
-The exercise shows the usage of BTagCalibrationReader standalone. 
 ## Installation
 ```
 $export SCRAM_ARCH=slc7_amd64_gcc700
@@ -20,6 +19,7 @@ $cd CMSDAS2020/BTaggingExercise/
 The b-tagging calibration weight is calculated via the `BTagWeight` class defined in `BTagWeight.cc` using the efficiency histograms from `EffHistos/`
 
 `Selection.C` runs selection criteria on the input samples and it is run using
+
 ```
 $source process_all.sh 
 ```

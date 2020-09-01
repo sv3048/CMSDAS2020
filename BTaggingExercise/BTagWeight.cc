@@ -36,7 +36,8 @@
 #include "TStopwatch.h"
 
 //Include BTagCalibrationStandalone class === Incomplete ===
-
+#include "BTagCalibrationStandalone.h"
+#include "BTagCalibrationStandalone.cpp"
 //========End of solution section of code (1 of 3)=========
 
 

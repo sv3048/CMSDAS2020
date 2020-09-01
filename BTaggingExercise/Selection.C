@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -36,7 +35,7 @@
 
 
 //================= Include BTagging Weight Calculator class========
-
+#include "BTagWeight.cc"
 //========================================
 
 #ifdef __MAKECINT__
@@ -75,7 +74,7 @@ double getXsec(std::string sample){
 	else return 1.0;
 }
 
-int Selection(int index){
+void Selection(int index){
 
 	
 	gStyle->SetOptStat(0);
@@ -133,6 +132,7 @@ int Selection(int index){
 	std::map<std::string, TDirectory*> dir;		
 	
 	std::string inputDirPath="/storage/gridka-nrg/smitra/CMSDAS2020/";
+	std::string outDirPath="~/workspace/CMSDAS2020/CMSSW_10_2_18/src/CMSDAS2020/BTaggingExercise/Output/";
 	std::string fileName;
 	std::string Channel;
 	
@@ -161,7 +161,9 @@ int Selection(int index){
 	bool isMC;
 	double evtWgt, bWeight, bWeight_ReShape;
 	
-	TFile* fOut= new TFile("/ceph/smitra/CMSDAS2020/OutputHisto/Output_"+TString(Sample)+".root","RECREATE");
+	TFile* fOut= new TFile(TString(outDirPath)+"Out_"+TString(Sample)+".root","RECREATE");
+
+	BTagWeight j;
 
 	gROOT->cd();
 	
@@ -253,12 +255,12 @@ int Selection(int index){
 
 			if(isMC){ 
 				evtWgt=(Xsec_[Channel]* Lumi)/nGen_[Channel];
-				evtWgt*=(genWeight/fabs(genWeight))*puWeight;									
+				evtWgt*=(genWeight*puWeight);									
 			}	
 			
 			for(UInt_t iJet=0; iJet<nJet; iJet++){
 				if(! (Jet_Pt[iJet] > 25.0 && fabs(Jet_eta[iJet]) < 2.5 && Jet_jetId[iJet]==6 ) ) continue;
-				if(! (Jet_Pt[iJet] > 25.0 && Jet_Pt[iJet] < 50.0 && Jet_puId[iJet]==7) ) continue;
+//				if(! (Jet_Pt[iJet] > 25.0 && Jet_Pt[iJet] < 50.0 && Jet_puId[iJet]==7) ) continue;
 				jetIdx.push_back(iJet);
 			}
 
@@ -290,7 +292,6 @@ int Selection(int index){
 			}
 				
 			if(isMC){
-				BTagWeight j;
 				bWeight = j.evalWeight("Medium","central", jetinfo, TString(Channel));
 				bWeight_ReShape = j.evalWeight("ReShape","central", jetinfo, TString(Channel));
 			
@@ -426,5 +427,4 @@ int Selection(int index){
 	gDirectory->ls("-m");
 	gDirectory->ls("-d");
 	
-	return 1;
-}	
+}
