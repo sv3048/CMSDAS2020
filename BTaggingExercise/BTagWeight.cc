@@ -74,7 +74,7 @@ BTagWeight::BTagWeight(){
 
 ///========================= Initialize BTagCalibration and BTagCalibrationReader (Incomplete) ==========
 
-//	BTagCalibration calib ("deepjet","DeepJet_102XSF_V2.csv");
+//	BTagCalibration calib ("deepjet","DeepFlavour_94XSF_V4_B_F.csv");
 
 //	reader=new BTagCalibrationReader(BTagEntry::OP_MEDIUM, "central"); 
 //	reader->load(calib, BTagEntry::FLAV_B,   "comb"); // b

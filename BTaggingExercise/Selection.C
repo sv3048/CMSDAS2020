@@ -140,7 +140,7 @@ void Selection(int index){
 	
 	double Lumi = 4200; // Luminosity in 1/pb
 
-	double Mwp = 0.2770; //Medium WP
+	double Mwp = 0.3033; //Medium WP
 
 	TStopwatch t;
 	
@@ -191,26 +191,26 @@ void Selection(int index){
 		else isMC=false;
 
 		if(!isMC){		
-			hnumJets_[Channel]=new TH1D("nJets_"+TString(Channel),"",5,-0.5,4.5);						
+			hnumJets_[Channel]=new TH1D("nJets_"+TString(Channel),"",4,0.5,4.5);						
 			hnumTags_[Channel]=new TH1D("nTags_"+TString(Channel),"",4,-0.5,3.5);			
-			h_allJetsPt_[Channel]=new TH1D("allJetsPt_"+TString(Channel),"",40,0.0,400.0);
+			h_allJetsPt_[Channel]=new TH1D("allJetsPt_"+TString(Channel),"",36,20.0,200.0);
 			h_allJetsDeepFlavB_[Channel]=new TH1D("allJetsDeepFlavB_"+TString(Channel),"",20,0.0,1.0);
 			h_firstJetDeepFlavB_[Channel]=new TH1D("firstJetDeepFlavB_"+TString(Channel),"",20,0.0,1.0);
 			h_secondJetDeepFlavB_[Channel]=new TH1D("secondJetDeepFlavB_"+TString(Channel),"",20,0.0,1.0);		
 		}
 		
 		else{
-			hnumJets_[Channel]=new TH1D("nJets_"+TString(Channel),"",5,-0.5,4.5);						
-			hnumJets_ReShape[Channel]=new TH1D("nJets_ReShape_"+TString(Channel),"",5,-0.5,4.5);						
-			hnumJets_noSF[Channel]=new TH1D("nJets_noSF_"+TString(Channel),"",5,-0.5,4.5);						
+			hnumJets_[Channel]=new TH1D("nJets_"+TString(Channel),"",4,0.5,4.5);						
+			hnumJets_ReShape[Channel]=new TH1D("nJets_ReShape_"+TString(Channel),"",4,0.5,4.5);						
+			hnumJets_noSF[Channel]=new TH1D("nJets_noSF_"+TString(Channel),"",4,0.5,4.5);						
 
 			hnumTags_[Channel]=new TH1D("nTags_"+TString(Channel),"",4,-0.5,3.5);			
 			hnumTags_ReShape[Channel]=new TH1D("nTags_ReShape_"+TString(Channel),"",4,-0.5,3.5);			
 			hnumTags_noSF[Channel]=new TH1D("nTags_noSF_"+TString(Channel),"",4,-0.5,3.5);			
 
-			h_allJetsPt_[Channel]=new TH1D("allJetsPt_"+TString(Channel),"",40,0.0,400.0);
-			h_allJetsPt_ReShape[Channel]=new TH1D("allJetsPt_ReShape_"+TString(Channel),"",40,0.0,400.0);
-			h_allJetsPt_noSF[Channel]=new TH1D("allJetsPt_noSF_"+TString(Channel),"",40,0.0,400.0);
+			h_allJetsPt_[Channel]=new TH1D("allJetsPt_"+TString(Channel),"",36,20.0,200.0);
+			h_allJetsPt_ReShape[Channel]=new TH1D("allJetsPt_ReShape_"+TString(Channel),"",36,20.0,200.0);
+			h_allJetsPt_noSF[Channel]=new TH1D("allJetsPt_noSF_"+TString(Channel),"",36,20.0,200.0);
 
 			h_allJetsDeepFlavB_[Channel]=new TH1D("allJetsDeepFlavB_"+TString(Channel),"",20,0.0,1.0);
 			h_allJetsDeepFlavB_ReShape[Channel]=new TH1D("allJetsDeepFlavB_ReShape_"+TString(Channel),"",20,0.0,1.0);
@@ -262,7 +262,6 @@ void Selection(int index){
 			
 			for(UInt_t iJet=0; iJet<nJet; iJet++){
 				if(! (Jet_Pt[iJet] > 25.0 && fabs(Jet_eta[iJet]) < 2.5 && Jet_jetId[iJet]==6 ) ) continue;
-//				if(! (Jet_Pt[iJet] > 25.0 && Jet_Pt[iJet] < 50.0 && Jet_puId[iJet]==7) ) continue;
 				jetIdx.push_back(iJet);
 			}
 
