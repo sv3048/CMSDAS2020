@@ -34,9 +34,11 @@
 #include "TStopwatch.h"
 
 
-//================= Include BTagging Weight Calculator class========
-#include "BTagWeight.cc"
-//========================================
+//================= Include BTagging SF evaluator class========
+
+//#include "BTagWeight.cc"
+
+//====================End of solution section of code (3 of 3) ================
 
 #ifdef __MAKECINT__
 #pragma link C++ class std::vector< TLorentzVector >+; 
@@ -131,8 +133,8 @@ void Selection(int index){
 
 	std::map<std::string, TDirectory*> dir;		
 	
-	std::string inputDirPath="/storage/gridka-nrg/smitra/CMSDAS2020/";
-	std::string outDirPath="~/workspace/CMSDAS2020/CMSSW_10_2_18/src/CMSDAS2020/BTaggingExercise/Output/";
+	std::string inputDirPath="/afs/cern.ch/work/s/spmondal/public/BTV_CMSDAS2020/samples/";
+	std::string outDirPath="Output/";
 	std::string fileName;
 	std::string Channel;
 	

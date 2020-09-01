@@ -35,10 +35,12 @@
 #include "TVector2.h"
 #include "TStopwatch.h"
 
-//Include BTagCalibrationStandalone class === Incomplete ===
-#include "BTagCalibrationStandalone.h"
-#include "BTagCalibrationStandalone.cpp"
-//========End of solution section of code (1 of 3)=========
+///======================== Include BTagCalibrationStandalone class (Incomplete) ===
+
+//#include "BTagCalibrationStandalone.h"
+//#include "BTagCalibrationStandalone.cpp"
+
+///========End of solution section of code (1 of 3)=========
 
 
 class BTagWeight
@@ -70,10 +72,21 @@ class BTagWeight
 
 BTagWeight::BTagWeight(){
 
-///========================= Initialize BTagCalibration and BTagCalibrationReader ==========
-//
-//
-//==========================
+///========================= Initialize BTagCalibration and BTagCalibrationReader (Incomplete) ==========
+
+//	BTagCalibration calib ("deepjet","DeepJet_102XSF_V2.csv");
+
+//	reader=new BTagCalibrationReader(BTagEntry::OP_MEDIUM, "central"); 
+//	reader->load(calib, BTagEntry::FLAV_B,   "comb"); // b
+//	reader->load(calib, BTagEntry::FLAV_C,   "comb"); // c
+//	reader->load(calib, BTagEntry::FLAV_UDSG,   "incl"); // light
+
+//	readerReShape=new BTagCalibrationReader(BTagEntry::OP_RESHAPING, "central");    
+//	readerReShape->load(calib, BTagEntry::FLAV_B,   "iterativefit"); // b
+//	readerReShape->load(calib, BTagEntry::FLAV_C,   "iterativefit"); // c
+//	readerReShape->load(calib, BTagEntry::FLAV_UDSG,   "iterativefit"); // light
+
+///==========================End of solution section of code (2 of 3)=========================================
 }
 
 BTagWeight::~BTagWeight()
