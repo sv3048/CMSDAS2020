@@ -16,7 +16,7 @@ $scram b -j9
 $cd CMSDAS2020/BTaggingExercise/
 ```
 ## Running
-The b-tagging calibration weight is calculated via the `BTagWeight` class defined in `BTagWeight.cc` using the efficiency histograms from `EffHistos/`
+The b-tagging calibration SF is calculated via the `BTagWeight` class defined in `BTagWeight.cc` using the efficiency histograms from `EffHistos/`
 
 `Selection.C` runs selection criteria on the input samples. Before running on all the samples, it is required to create a library using ROOT as follows.
 ```
