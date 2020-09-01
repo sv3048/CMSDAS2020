@@ -28,7 +28,7 @@
 #include "TGaxis.h"
 #include "TPad.h"
 
-int plot_stack(std::string Var, int tune){
+int make_plot(std::string Var, int tune){
 
 	gStyle->SetOptStat(0);
 
@@ -68,11 +68,13 @@ int plot_stack(std::string Var, int tune){
 
 	bool isnoSF=(tune==0);
 	bool isReShape=(tune==2);
+	
 	TString plotDir="plots/";
 	
 
-	std::string inputDirPath="/ceph/smitra/CMSDAS2020/OutputHisto/";
-	std::string HistoName, fileName;
+	std::string inputDirPath="Output/";
+	std::string HistoName; 
+	TString fileName;
 
 	for(UInt_t zz=0; zz<var.size(); zz++){
 
@@ -84,11 +86,11 @@ int plot_stack(std::string Var, int tune){
 		for(UInt_t ll=0; ll<channel.size(); ll++){
 		
 			Channel = channel.at(ll);
-			fileName = inputDirPath + "Output_"+Channel+".root";
+			fileName = TString(inputDirPath)+"Out_"+TString(Channel)+".root";
 
 			isMC=(Channel!="MuEG2017D");
 			
-			fHisto[Channel] = new TFile(fileName.c_str(),"Read");		
+			fHisto[Channel] = new TFile(fileName,"Read");		
 			gROOT->cd();
 			
 			HistoName=Channel+"/"+Var+"_"+Channel;
@@ -112,14 +114,6 @@ int plot_stack(std::string Var, int tune){
 		h_["TTSemi"]->SetFillColor(kOrange-1); h_["TTSemi"]->SetLineColor(kBlack); hStack_[Var]->Add(h_["TTSemi"]); AllMC_[Var]->Add(h_["TTSemi"]);
 	}
 	
-
-		
-	gr=new TGraphAsymmErrors(h_["MuEG2017D"],AllMC_[Var],"pois");
-	gr->SetLineColor(kBlack); gr->SetLineWidth(2); gr->SetMarkerStyle(20);
-	gr->GetXaxis()->SetTitle(TString(Var)); gr->GetXaxis()->SetTitleSize(0.08); gr->GetXaxis()->SetLabelSize(0.07);
-	 
-	gr->GetYaxis()->SetTitle("Data/MC"); gr->GetYaxis()->SetTitleSize(0.09); gr->GetYaxis()->CenterTitle(1); gr->GetYaxis()->SetTitleOffset(0.25);		
-	
 	AllMC_[Var]->SetFillColor(kGray+2);
 	AllMC_[Var]->SetLineColor(kBlack);
 	AllMC_[Var]->SetFillStyle(3004);
@@ -127,7 +121,7 @@ int plot_stack(std::string Var, int tune){
 	h_["MuEG2017D"]->SetMarkerStyle(20); h_["MuEG2017D"]->SetLineColor(kBlack); h_["MuEG2017D"]->SetLineWidth(2);
 	
 
-	TCanvas* c=new TCanvas("Can","Can"); c->Divide(1,2);
+	TCanvas* c=new TCanvas("Can","Can"); 
 	TLegend* leg=new TLegend(0.6,0.8,0.75,0.95); leg->SetFillColor(kWhite);
 	leg->AddEntry(h_["MuEG2017D"],"Data","ple1");
 	leg->AddEntry(h_["TTSemi"],"t#bar{t}","f"); 
@@ -138,20 +132,13 @@ int plot_stack(std::string Var, int tune){
 	leg->AddEntry(AllMC_[Var],"Total Unc.","f");
 	
 	c->cd(1); 
-	gPad->SetPad(0.006,0.203,0.92855,0.998);
 	gPad->SetTicky(); gPad->SetTickx();	
-	gPad->SetLogy(1);
 	TGaxis::SetMaxDigits(3);
 	hStack_[Var]->Draw("HIST");
 	AllMC_[Var]->Draw("E2 SAME");
 	h_["MuEG2017D"]->Draw("PE1SAME"); 
-	leg->Draw(); 
-			
-	c->cd(2);
-	gPad->SetPad(0.006,0,0.92855,0.2661035);			
-	gPad->SetGridy(1); gPad->SetTicky(); gPad->SetTickx(); 
-	gr->Draw("PE1SAME"); 
-			
+	leg->Draw("SAME"); 
+	
 	c->SaveAs(plotDir+TString(Var)+".png");
 	
 	return 1;

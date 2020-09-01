@@ -1,7 +1,7 @@
 #!/bin/bash -f
 
 ## run on Data samples
-mkdir -p /ceph/smitra/CMSDAS2020/OutputHisto/
+mkdir -p Output
 mkdir -p logs
 
 for sample in {-1,1,2,3,4,5,6,7,8,9,10};do
