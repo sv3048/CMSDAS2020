@@ -143,7 +143,7 @@ int make_plot(std::string Var, int tune){
 	gr->GetXaxis()->SetTitleSize(0.12);
 
 	if(Var=="nJets") gr->GetXaxis()->SetTitle("jet multiplicity"); //make y label bigger 
-    if(Var=="nJets") gr->GetXaxis()->SetTitle("b-tag multiplicity");
+    if(Var=="nTags") gr->GetXaxis()->SetTitle("b-tag multiplicity");
     if(Var=="allJetsPt") gr->GetXaxis()->SetTitle("jet p_{T} [GeV]");
     if(Var=="allJetsDeepFlavB") gr->GetXaxis()->SetTitle("Deepjet score (all jets)");
     if(Var=="firstJetDeepFlavB") gr->GetXaxis()->SetTitle("Deepjet score (leading jet)");
