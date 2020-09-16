@@ -5,7 +5,7 @@ Repository for BTaggingExercise for CMSDAS2020
 ```
 $export SCRAM_ARCH=slc7_amd64_gcc700
 
-$cmsrel CMSSW_10_6_16/
+$cmsrel CMSSW_10_6_16
 $cd CMSSW_10_6_16/src/
 $cmsenv
 
