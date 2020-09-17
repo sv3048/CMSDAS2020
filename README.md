@@ -30,6 +30,8 @@ This creates a shared object `Selection_C.so` locally and related dictionaries. 
 $source process_all.sh &>master.log &
 ```
 It takes around 20-25 mins for the jobs to complete. For information regarding the overall progress refer to the `master.log`, while individual job logs are stored in `logs/` directory.
+
+# README.md
   
 The input sample files can be found in `/afs/cern.ch/work/s/spmondal/public/BTV_CMSDAS2020/samples/`
 
