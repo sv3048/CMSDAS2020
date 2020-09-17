@@ -31,8 +31,6 @@ $source process_all.sh &>master.log &
 ```
 It takes around 20-25 mins for the jobs to complete. For information regarding the overall progress refer to the `master.log`, while individual job logs are stored in `logs/` directory.
 
-# README.md
-  
 The input sample files can be found in `/afs/cern.ch/work/s/spmondal/public/BTV_CMSDAS2020/samples/`
 
 `make_plot.C` script can be used to check Data-MC comparison plots with two different b-tagging calibration methods, namely 1a) fixed WP-based (index =1) and 2b) discriminant reshaping (index=2) from https://twiki.cern.ch/twiki/bin/viewauth/CMS/BTagSFMethods . Also the plots w/o  applying the SFs can be obtained by switching to index=0.     
@@ -45,3 +43,20 @@ One can replace the variable and the index in the above line to get plots for ot
 Please fill up the following feedback form after you complete the exercise.
 
 https://docs.google.com/forms/d/e/1FAIpQLSeRQ1tZGhfS8pnWr0at-uaDeYwbLBuGmgk9dSUzUJIaM-GvlQ/viewform
+
+
+
+
+
+
+
+
+
+17/09/2020
+# README.md
+source sadhana_workarea.sh
+mkdir CMDAS2020_BtaggingE
+cd mkdir CMDAS2020_BtaggingE
+ #cd /afs/cern.ch/work/s/sverma/CMSDAS2020_BtaggingE
+
+git clone https://github.com/sv3048/CMSDAS2020.git
